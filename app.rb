@@ -10,5 +10,22 @@ configure :development do
 end
 
 get '/' do
-  'Hello world!'
+  @recipes = []
+  erb :index
+end
+
+get '/new' do
+  erb :new
+end
+
+post '/recipes' do
+  params.to_s
+  # name = params[:name]
+  # description = params[:description]
+  # duration = params[:duration]
+  # finished = params[:finished]
+  # recipe = Recipe.new(name, description, duration, finished)
+  # @cookbook.add_recipe(recipe)
+  # @recipes << [name, description, duration, finished]
+  # erb :index
 end
