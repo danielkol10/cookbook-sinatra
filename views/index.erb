@@ -1,6 +1,6 @@
-<% @recipes.each_with_index do |recipe, index| %>
+<% @recipes.each_with_index do |recipe, recipe_index| %>
   <ul>
-    <li><%= recipe.name %> - <a href="/recipes/<%= index %>">Destroy</a> </li>
+    <li><%= recipe.name %> - <a href="/recipes/<%= recipe_index %>">Destroy</a> </li>
     <li><%= recipe.description %></li>
     <li><%= recipe.duration %></li>
   </ul>
