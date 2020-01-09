@@ -39,16 +39,16 @@ class Cookbook
     end
   end
 
-  #   def remove_recipe(recipe_index)
-  #     # remove recipe from the cookbook
-  #     @recipes.delete_at(recipe_index)
-  #     csv_options = { col_sep: ',', force_quotes: true, quote_char: '"' }
-  #     CSV.open(@csv_file_path, 'w', csv_options) do |csv|
-  #       @recipes.each do |rec|
-  #         csv << [rec.name, rec.description, rec.duration, rec.finished]
-  #       end
-  #     end
-  #   end
+  def remove_recipe(recipe_index)
+    # remove recipe from the cookbook
+    @recipes.delete_at(recipe_index)
+    csv_options = { col_sep: ',', force_quotes: true, quote_char: '"' }
+    CSV.open(@csv_file_path, 'w', csv_options) do |csv|
+      @recipes.each do |rec|
+        csv << [rec.name, rec.description, rec.duration]
+      end
+    end
+  end
 
   #   def finished(recipe_index)
   #     @recipes[recipe_index].mark

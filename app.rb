@@ -25,3 +25,8 @@ post '/recipes' do
   cookbook.add_recipe(recipe)
   redirect to '/'
 end
+
+get '/recipes/:recipe_index' do
+  cookbook.remove_recipe(params[:recipe_index].to_i)
+  redirect to '/'
+end

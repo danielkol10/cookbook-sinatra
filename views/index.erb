@@ -1,8 +1,8 @@
-<% @recipes.each do |recipe| %>
+<% @recipes.each_with_index do |recipe, index| %>
   <ul>
-    <li><%= recipe.name %></li>
+    <li><%= recipe.name %> - <a href="/recipes/<%= index %>">Destroy</a> </li>
     <li><%= recipe.description %></li>
     <li><%= recipe.duration %></li>
   </ul>
 <% end %>
-<a href="/new">create</a>
+<a href="/new">create a recipe</a>
