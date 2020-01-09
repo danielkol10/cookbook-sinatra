@@ -1,6 +1,7 @@
 <% @recipes.each do |recipe| %>
   <ul>
-    <li><%= recipe %></li>
+    <li><%= recipe.name %></li>
+    <li><%= recipe.description %></li>
   </ul>
 <% end %>
 <a href="/new">create</a>

@@ -17,8 +17,8 @@ class Cookbook
       # Here, row is an array of columns
       name = row[0]
       description = row[1]
-      duration = row[2]
-      recipe = Recipe.new(name, description, duration)
+      # duration = row[2]
+      recipe = Recipe.new(name, description)
       @recipes << recipe
     end
   end
@@ -34,7 +34,7 @@ class Cookbook
     csv_options = { col_sep: ',', force_quotes: true, quote_char: '"' }
     CSV.open(@csv_file_path, 'w', csv_options) do |csv|
       @recipes.each do |rec|
-        csv << [rec.name, rec.description, rec.duration, rec.finished]
+        csv << [rec.name, rec.description]
       end
     end
   end
