@@ -21,7 +21,7 @@ get '/new' do
 end
 
 post '/recipes' do
-  recipe = Recipe.new(params[:name], params[:description])
+  recipe = Recipe.new(params[:name], params[:description], params[:duration])
   cookbook.add_recipe(recipe)
   redirect to '/'
 end
