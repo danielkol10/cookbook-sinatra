@@ -1,0 +1,7 @@
+<h3>Which recipe do you want to save?</h3>
+<% @search_results.each_with_index do |recipe, index| %>
+  <a href=<%= URI.encode "http://localhost:4567/add?name=#{recipe.name}&description=#{recipe.description}&duration=#{recipe.duration}"%>>
+    <h3><%= index %> - <%= recipe.name %></h3>
+  </a>
+</div>
+<% end %>
